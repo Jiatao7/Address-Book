@@ -1,0 +1,55 @@
+/* layout */
+:root {
+  --primary: #3ca1e4;
+  --error: #e7195a;
+}
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: Verdana, sans-serif;
+}
+header {
+  background: #fff;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #333;
+  text-decoration: none;
+}
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* homepage */
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+.contact-box {
+  background: #fff;
+  border-radius: 6px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.contact-box h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.3em;
+  color: var(--primary);
+}
+.contact-box p {
+  margin: 0;
+  font-size: 1.1em;
+  color: #555;
+}
