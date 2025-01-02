@@ -28,11 +28,11 @@ export default function ContactForm () {
         <form className="contact-form" action={handleSubmit}>
             <h3>Add a New Contact</h3>
             <label htmlFor="name">Name</label>
-            <input id="name" type="text" name="name" placeholder="Enter name"/>
+            <input id="name" type="text" autoComplete="on" name="name" placeholder="Enter name"/>
             <label htmlFor="phone">Phone</label>
-            <input id="phone" type="text" name="phone" placeholder="Enter phone"/>
+            <input id="phone" type="text" autoComplete="on" name="phone" placeholder="Enter phone"/>
             <label htmlFor="address">Address</label>
-            <input id="address" type="text" name="address" placeholder="Enter address"/>
+            <input id="address" type="text" autoComplete="on" name="address" placeholder="Enter address"/>
             <button className="add-button">Add Contact</button>
             {error && <div className="error">{error}</div>}
       </form>
