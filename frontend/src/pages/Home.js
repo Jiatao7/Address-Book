@@ -3,6 +3,8 @@ import {useEffect, useState} from "react"
 
 //Components
 import ContactBox from '../components/ContactBox'
+import ContactForm from '../components/ContactForm'
+
 
 export default function Home() {
     const [contacts, setContacts] = useState(null)
@@ -28,6 +30,7 @@ export default function Home() {
                     <ContactBox key={contact._id} contact={contact} />
                 )}
             </div>
+            <ContactForm />
         </div>
     )
 }

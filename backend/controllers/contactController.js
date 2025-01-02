@@ -24,6 +24,11 @@ const getContact = async (req, res) => {
 // POST a new contact
 createContact = async (req, res) => {
     const contactData = req.body
+
+    if (!contactData.name || !contactData.phone || !contactData.address) {
+      return res.status(400).json({ error: 'Please fill in all fields'})
+    }
+
     try {
         const contact = await Contact.create(contactData)
         res.status(200).json(contact)

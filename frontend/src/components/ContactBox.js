@@ -1,4 +1,4 @@
-export default function (props) {
+export default function ContactBox (props) {
     return (
         <div className="contact-box">
             <h4>{props.contact.name}</h4>
