@@ -1,7 +1,9 @@
 import {useState} from "react"
+import { useContactsContext } from "../context/ContactsContext"
 
 export default function ContactForm () {
     const [error, setError] = useState(null)
+    const {dispatch} = useContactsContext()
 
     async function handleSubmit(formData) {
         const name = formData.get("name")
@@ -9,18 +11,16 @@ export default function ContactForm () {
         const address = formData.get("address")
         const contact = {name, phone, address}
 
-        console.log(name)
-        console.log(contact)
-
         const response = await fetch('/api/contacts', {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(contact)})
         const result = await response.json()
-        console.log(response)
+        //console.log(response)
         if(!response.ok) {
             setError(result.error)
             console.log(error)
         } else {
             setError(null)
             console.log("SUCCESS", result)
+            dispatch({type: "CREATE", payload: result})
         }
     }
 

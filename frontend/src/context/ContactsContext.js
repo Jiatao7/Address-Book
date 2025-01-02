@@ -15,8 +15,8 @@ const ContactsReducer = (state, action) => {
         case "SET":
             return {contacts: action.payload}   //payload is array of contacts
         case "CREATE":
-            return {contacts: [action.payload, ...state.contacts]}   //payload is new contact
-            //sort
+            const contacts = [action.payload, ...state.contacts]    //payload is new contact
+            return {contacts: contacts.sort((a, b) => a.name > b.name ? 1 : -1)}    //sort
         default:
             return state
     }
