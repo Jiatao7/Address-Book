@@ -8,8 +8,9 @@ export default function ContactForm () {
     async function handleSubmit(formData) {
         const name = formData.get("name")
         const phone = formData.get("phone")
+        const email = formData.get("email")
         const address = formData.get("address")
-        const contact = {name, phone, address}
+        const contact = {name, phone, email, address}
 
         const response = await fetch('/api/contacts', {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(contact)})
         const result = await response.json()
@@ -31,7 +32,9 @@ export default function ContactForm () {
             <input id="name" type="text" autoComplete="on" name="name" placeholder="Enter name"/>
             <label htmlFor="phone">Phone</label>
             <input id="phone" type="text" autoComplete="on" name="phone" placeholder="Enter phone"/>
-            <label htmlFor="address">Address</label>
+            <label htmlFor="address">Email</label>
+            <input id="email" type="text" autoComplete="on" name="email" placeholder="Enter email"/>
+            <label htmlFor="email">Address</label>
             <input id="address" type="text" autoComplete="on" name="address" placeholder="Enter address"/>
             <button className="add-button">Add Contact</button>
             {error && <div className="error">{error}</div>}

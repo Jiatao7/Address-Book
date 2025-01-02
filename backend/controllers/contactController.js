@@ -25,8 +25,8 @@ const getContact = async (req, res) => {
 createContact = async (req, res) => {
     const contactData = req.body
 
-    if (!contactData.name || !contactData.phone || !contactData.address) {
-      return res.status(400).json({ error: 'Please fill in all fields'})
+    if (!contactData.name) {
+      return res.status(400).json({ error: 'Please enter a name'})
     }
 
     try {
