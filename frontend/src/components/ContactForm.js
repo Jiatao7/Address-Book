@@ -28,6 +28,7 @@ export default function ContactForm () {
     return (
         <form className="contact-form" action={handleSubmit}>
             <h3>Add a New Contact</h3>
+            <br></br>
             <label htmlFor="name">Name</label>
             <input id="name" type="text" autoComplete="on" name="name" placeholder="Enter name"/>
             <label htmlFor="phone">Phone</label>

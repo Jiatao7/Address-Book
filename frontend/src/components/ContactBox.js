@@ -18,7 +18,7 @@ export default function ContactBox (props) {
             <p>{props.contact.phone && `Phone: ${props.contact.phone}`}</p>
             <p>{props.contact.email && `Email: ${props.contact.email}`}</p>
             <p>{props.contact.address && `Address: ${props.contact.address}`}</p>
-            <span onClick={handleClick}>Delete</span>
+            <span className="delete-button" onClick={handleClick}>Delete</span>
         </div>
     )
 }

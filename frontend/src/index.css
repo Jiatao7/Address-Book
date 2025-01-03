@@ -3,18 +3,24 @@
   --primary: #3ca1e4;
   --error: #e7195a;
 }
-body {
-  background: #f1f1f1;
+* {
   margin: 0;
   font-family: Verdana, sans-serif;
 }
+body {
+  background: #f1f1f1;
+}
+
+/* Header */
 header {
   background: #fff;
+  margin-bottom: 20px;
+
 }
 header .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 24px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,40 +29,51 @@ header a {
   color: #333;
   text-decoration: none;
 }
+
+/* homepage */
 .pages{
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
 }
 
-/* homepage */
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
+
 .contact-box {
-  background: #fff;
-  border-radius: 6px;
+  background: #f9f9f9;
+  border-radius: 10px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 25px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.3s;
 }
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
 .contact-box h4 {
-  margin: 0 0 10px 0;
-  font-size: 1.3em;
+  margin: 0 0 15px 0;
+  font-size: 1.5em;
+  font-weight: bold;
   color: var(--primary);
 }
+
 .contact-box p {
   margin: 0;
   font-size: 1.1em;
-  color: #555;
+  color: #666;
+  line-height: 1.6;
 }
 
 
 /* Form */
-/* new workout form */
 label, input {
   display: block;
 }
@@ -74,9 +91,9 @@ form button {
   border: 0;
   color: #fff;
   padding: 10px;
-  font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.3s;
 }
 div.error {
   padding: 10px;
@@ -85,4 +102,29 @@ div.error {
   color: var(--error);
   border-radius: 4px;
   margin: 20px 0;
+}
+
+/* Delete button */
+.delete-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: var(--error);
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 10%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  font-size: 13px;
+}
+
+.delete-button:hover, form button:hover {
+  transform: scale(1.1);
+}
+
+.delete-button:active, form button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
