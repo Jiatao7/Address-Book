@@ -12,7 +12,7 @@ export default function Home() {
     
     useEffect(() => {
         const fetchContacts = async () => {
-            const response = await fetch('/api/contacts')
+            const response = await fetch(`https://${process.env.REACT_APP_API_URL}/api/contacts/`)
             const data = await response.json()
 
             if(response.ok) {
@@ -22,8 +22,6 @@ export default function Home() {
         fetchContacts()
     }, [])
     
-    console.log(contacts)
-
     return(
         <div className="home">
             <div className="contacts">

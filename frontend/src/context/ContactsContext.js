@@ -18,7 +18,6 @@ const ContactsReducer = (state, action) => {
             const contacts = [action.payload, ...state.contacts]    //payload is new contact
             return {contacts: contacts.sort((a, b) => a.name > b.name ? 1 : -1)}    //sort
         case "DELETE":
-            console.log("DELETE " + action.payload)
             let result = state.contacts    //payload is id
             result = result.filter((contact) => (contact._id !== action.payload))
             return {contacts: result};

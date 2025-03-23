@@ -12,15 +12,13 @@ export default function ContactForm () {
         const address = formData.get("address")
         const contact = {name, phone, email, address}
 
-        const response = await fetch('/api/contacts', {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(contact)})
+        const response = await fetch(`https://${process.env.REACT_APP_API_URL}/api/contacts`, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(contact)})
         const result = await response.json()
-        //console.log(response)
         if(!response.ok) {
             setError(result.error)
             console.log(error)
         } else {
             setError(null)
-            console.log("SUCCESS", result)
             dispatch({type: "CREATE", payload: result})
         }
     }
