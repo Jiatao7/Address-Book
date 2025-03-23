@@ -1,5 +1,6 @@
 //Modules
 const express = require('express')
+const cors = require('cors')
 const mongoose = require('mongoose')
 const addressRoutes = require('./routes/contacts')
 require("dotenv").config()
@@ -8,6 +9,7 @@ require("dotenv").config()
 const app = express()
 
 //Middleware
+app.use(cors())
 app.use(express.json())
 app.use((req, res, next) => {
     console.log(req.path, req.method)
